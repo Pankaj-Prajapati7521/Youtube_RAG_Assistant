@@ -1,0 +1,28 @@
+# LangChain
+langchain
+langchain-core
+langchain-community
+
+# Hugging Face
+langchain-huggingface
+transformers
+huggingface-hub
+
+# Environment Variables
+python-dotenv
+
+# YouTube
+youtube-transcript-api
+
+# Embeddings
+sentence-transformers
+
+# Vector Database
+faiss-cpu
+
+# Machine Learning / Numerical
+numpy
+scikit-learn
+
+# Web App
+streamlit
