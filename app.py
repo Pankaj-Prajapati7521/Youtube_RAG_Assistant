@@ -1,6 +1,7 @@
 import os 
 import re
 import streamlit as st
+from langchain_groq import ChatGroq
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint, HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.output_parsers import StrOutputParser
@@ -28,12 +29,11 @@ st.write(
 #building llm
 @st.cache_resource
 def load_llm():
-    llm = HuggingFaceEndpoint(
-        repo_id = "meta-llama/Llama-3.1-8B-Instruct",
-        task = "text_generation",
-        huggingfacehub_api_token = token
+    model = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        temperature=0,
+        api_key=st.secrets["GROQ_API_KEY"]
     )
-    model = ChatHuggingFace(llm = llm)
     return model
 
 model = load_llm()
