@@ -30,7 +30,7 @@ st.write(
 @st.cache_resource
 def load_llm():
     model = ChatGroq(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         temperature=0,
         api_key=st.secrets["GROQ_API_KEY"]
     )
